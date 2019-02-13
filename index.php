@@ -7,28 +7,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
     <style type="text/css">
-        .wrapper{
-            width: 650px;
-            margin: 0 auto;
-        }
-        .page-header h2{
-            margin-top: 0;
-        }
-        table tr td:last-child a{
-            margin-right: 15px;
-        }
-    </style>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
-        });
-    </script>
+    .wrapper{
+        width: 650px;
+        margin: 0 auto;
+    }
+    .page-header h2{
+        margin-top: 0;
+    }
+    table tr td:last-child a{
+        margin-right: 15px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+</script>
 </head>
 <body>
-    <button id='btn_signup'>Зарегистрироваться</button>
-    <button id='btn_signin'>Войти</button>
+    <div id='to_system'>
+        <button id='btn_signup'>Зарегистрироваться</button>
+        <button id='btn_signin'>Войти</button>
+    </div>
 
-    <form method='POST' action='' id='signup'>
+    <form method='POST' action='' id='signup' style='display: none'>
         <label for='login_signup'>Логин</label><br>
         <input type="text" name="login_signup" id='login_signup'><br>
         <label for='pwd_signup'>Пароль</label><br>
@@ -39,7 +41,7 @@
         <input type="submit" name="signup_user" value='Зарегистрироваться'>
     </form>
 
-    <form method='POST' action='' id='signin'>
+    <form method='POST' action='' id='signin' style='display: none'>
         <label for='login_signin'>Логин</label><br>
         <input type="text" name="login_signin" id='login_signin'><br>
         <label for='pwd_signin'>Пароль</label><br>
