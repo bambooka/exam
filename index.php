@@ -25,63 +25,27 @@
     </script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header clearfix">
-                        <h2 class="pull-left">Employees Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Add New Employee</a>
-                    </div>
-                    <?php
-                    // Include config file
-                    require_once "config.php";
-                    
-                    // Attempt select query execution
-                    $sql = "SELECT * FROM employees";
-                    if($result = $mysqli->query($sql)){
-                        if($result->num_rows > 0){
-                            echo "<table class='table table-bordered table-striped'>";
-                                echo "<thead>";
-                                    echo "<tr>";
-                                        echo "<th>#</th>";
-                                        echo "<th>Name</th>";
-                                        echo "<th>Address</th>";
-                                        echo "<th>Salary</th>";
-                                        echo "<th>Action</th>";
-                                    echo "</tr>";
-                                echo "</thead>";
-                                echo "<tbody>";
-                                while($row = $result->fetch_array()){
-                                    echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
-                                        echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td>" . $row['address'] . "</td>";
-                                        echo "<td>" . $row['salary'] . "</td>";
-                                        echo "<td>";
-                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
-                                        echo "</td>";
-                                    echo "</tr>";
-                                }
-                                echo "</tbody>";                            
-                            echo "</table>";
-                            // Free result set
-                            $result->free();
-                        } else{
-                            echo "<p class='lead'><em>No records were found.</em></p>";
-                        }
-                    } else{
-                        echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
-                    }
-                    
-                    // Close connection
-                    $mysqli->close();
-                    ?>
-                </div>
-            </div>        
-        </div>
-    </div>
+    <button id='btn_signup'>Зарегистрироваться</button>
+    <button id='btn_signin'>Войти</button>
+
+    <form method='POST' action='' id='signup'>
+        <label for='login_signup'>Логин</label><br>
+        <input type="text" name="login_signup" id='login_signup'><br>
+        <label for='pwd_signup'>Пароль</label><br>
+        <input type="text" name="pwd_signup" id='pwd_signup'><br>
+        <label for='user_name'>Фамилия Имя Отчество</label><br>
+        <input type="text" name="user_name" id='user_name'><br><br>
+
+        <input type="submit" name="signup_user" value='Зарегистрироваться'>
+    </form>
+
+    <form method='POST' action='' id='signin'>
+        <label for='login_signin'>Логин</label><br>
+        <input type="text" name="login_signin" id='login_signin'><br>
+        <label for='pwd_signin'>Пароль</label><br>
+        <input type="text" name="pwd_signin" id='pwd_signin'><br>
+        
+        <input type="submit" name="signin_user" value='Войти'>
+    </form>
 </body>
 </html>
