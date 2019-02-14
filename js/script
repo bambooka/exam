@@ -1,0 +1,1 @@
+let signUp = document.getElementById('sign_up');
