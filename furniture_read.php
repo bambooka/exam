@@ -46,6 +46,7 @@
                             echo "<table class='table table-bordered table-striped'>";
                             echo "<thead>";
                             echo "<tr>";
+                            echo "<th>Артикул</th>";
                             echo "<th>Изображение</th>";
                             echo "<th>Название</th>";
                             echo "<th>Единица измерения</th>";
@@ -59,6 +60,7 @@
                             echo "<tbody>";
                             while($row = $result->fetch_array()){
                                 echo "<tr>";
+                                echo "<td>" . $row['article'] . "</td>";
                                 echo "<td>" . $row['image'] . "</td>";
                                 echo "<td>" . $row['name'] . "</td>";
                                 echo "<td>" . $row['measure'] . "</td>";
@@ -70,7 +72,7 @@
                                 echo "<td>";
                                 echo "<a href='read.php?id=". $row['article'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
                                 echo "<a href='update.php?id=". $row['article'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                echo "<a href='delete.php?id=". $row['article'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                echo "<a href='furniture_delete.php?article=". $row['article'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
                                 echo "</td>";
                                 echo "</tr>";
                             }
