@@ -42,7 +42,7 @@
         <input type="submit" name="signup_user" value='Зарегистрироваться'>
     </form>
 
-    <form method='POST' action='' id='signin' style='display: none'>
+    <form method='POST' action='authorization.php' id='signin' style='display: none'>
         <label for='login_signin'>Логин</label><br>
         <input type="text" name="login_signin" id='login_signin'><br>
         <label for='pwd_signin'>Пароль</label><br>
