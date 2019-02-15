@@ -31,7 +31,7 @@
         <button id='btn_signin'>Войти</button>
     </div>
 
-    <form method='POST' action='' id='signup' style='display: none'>
+    <form method='POST' action='register.php' id='signup' style='display: none'>
         <label for='login_signup'>Логин</label><br>
         <input type="text" name="login_signup" id='login_signup'><br>
         <label for='pwd_signup'>Пароль</label><br>
