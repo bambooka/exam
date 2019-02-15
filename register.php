@@ -26,8 +26,6 @@ $password = htmlspecialchars($password);
 $login = trim($login);
 $password = trim($password);
  // подключаемся к базе
-echo $login;
-echo $password;
 
 require_once "config.php";
 
@@ -41,30 +39,13 @@ $sql_add = "INSERT INTO user (login,password,role) VALUES ('$login', '$password'
                             $result->free();
                         } else{
                             $mysqli->query($sql_add);
-                            echo 'success';
+                            echo 'Вы успешно зарегистрировались. Теперь Вы можете войти в систему<br>';
+                            echo '<a href="index.php">На главную</a> ';
                         }
                     } else{
                         echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
                     }
 
-
- //    include ("config.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
- // // проверка на существование пользователя с таким же логином
- //    $result = mysql_query("SELECT login FROM user WHERE login='$login'", $mysqli);
- //    $myrow = mysql_fetch_array($result);
- //    if (!empty($myrow['login']))
- //        exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
- //    }
- // // если такого нет, то сохраняем данные
- //    $result2 = mysql_query ("INSERT INTO user (login,password) VALUES('$login','$password')");
- //    // Проверяем, есть ли ошибки
- //    if ($result2=='TRUE')
- //    {
- //        echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
- //    }
- //    else {
- //        echo "Ошибка! Вы не зарегистрированы.";
- //    }
 }
 $mysqli->close();
 ?>
