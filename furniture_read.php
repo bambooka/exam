@@ -71,7 +71,7 @@
                                 echo "<td>" . $row['main_provider'] . "</td>";
                                 echo "<td>";
                                 echo "<a href='read.php?id=". $row['article'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                echo "<a href='update.php?id=". $row['article'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                echo "<a href='furniture_update.php?article=". $row['article'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
                                 echo "<a href='furniture_delete.php?article=". $row['article'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
                                 echo "</td>";
                                 echo "</tr>";
