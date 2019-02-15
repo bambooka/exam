@@ -30,7 +30,7 @@ $password = trim($password);
 require_once "config.php";
 
 $sql = "SELECT login FROM user WHERE login='$login'";
-$sql_add = "INSERT INTO user (login,password,role) VALUES ('$login', '$password','customer')";
+$sql_add = "INSERT INTO user (login,password,role) VALUES ('$login', '$password','Заказчик')";
 
 if($result = $mysqli->query($sql)){
     if($result->num_rows > 0){

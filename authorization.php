@@ -33,7 +33,28 @@ $sql = "SELECT * FROM user WHERE login='$login'";
 
 if($result = $mysqli->query($sql)){
   if($result->num_rows > 0){
-    echo 'ok';
+    $role = 'Заказчик';
+
+    switch ($role) {
+      case 'Заказчик':
+      header("Location: customer_page.php");
+      break;
+      case 'Директор':
+      header("Location: director_page.php");
+      break;
+      case 'Менеджер':
+      header("Location: manager_page.php");
+      break;
+      case 'Мастер':
+      header("Location: master_page.php");
+      break;
+      case 'Заместитель директора':
+      header("Location: deputy_page.php");
+      break;
+      default:
+      header("Location: index.php");
+      break;
+    }
 
     $result->free();
   } else{
@@ -43,6 +64,6 @@ if($result = $mysqli->query($sql)){
 } else{
   echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
 }
-
 }
+
 ?>
